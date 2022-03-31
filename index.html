@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="navBar">
+        <ul>
+            <li><a href="javascript:void(0)" id="bookList">List Of Books</a></li>
+            <li><a href="javascript:void(0)" id="addBook">Add Book</a></li>
+        </ul>
+    </div>
+
+
+    <div class="bookList">
+
+    </div>
+
+    <div class="addBook">
+        <form id="bookForm">
+            <label for="Title">Title:</label>
+            <input type="text" id="Title" name="Title" placeholder="Book Title here"><br>
+
+            <label for="Author">Author:</label>
+            <input type="text" id="Author" name="Author" placeholder="Author here"><br>
+
+            <label for="Publisher">Publisher name:</label>
+            <input type="text" id="Publisher" name="Publisher" placeholder="Publisher"><br>
+
+            <label for="NumberOfPages">NumberOfPages:</label>
+            <input type="number" id="NumberOfPages" name="NumberOfPages" placeholder="Number Of Pages"><br>
+            
+            <label for="EditionNumber">Edition Number:</label>
+            <input type="number" id="EditionNumber" name="EditionNumber" placeholder="Edition Number"><br>
+            
+            <label for="Availability">Availability:</label>
+            <select name="Availability">
+                <option value="Paperback">Paperback</option>
+                <option value="eBook">eBook</option>
+                <option value="Audiobook">Audiobook</option>
+            </select> <br/>
+
+            <label for="PublicationDate">Publication Date:</label>
+            <input type="date" id="PublicationDate" name="PublicationDate" placeholder="Publication Date"><br><br>
+            <input type="submit" value="Submit">
+          </form> 
+    </div>
+
+</body>
+
+</html>
