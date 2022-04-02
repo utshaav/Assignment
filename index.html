@@ -18,35 +18,57 @@
 
     </div>
 
-    <div class="addBook">
+    <div class="addBook hide">
         <form id="bookForm">
-            <label for="Title">Title:</label>
-            <input type="text" id="Title" name="Title" placeholder="Book Title here"><br>
+            <ul>
+                <li>
+                    <label for="Title">Title:</label>
+                    <input required type="text" id="Title" name="Title" placeholder="Book Title here">
+                </li>
+                <li>
+                    <label for="ISBN">ISBN:</label>
+                    <input required type="number" id="ISBN" name="ISBN" placeholder="ISBN">
+                </li>
+                <li>
+                    <label for="Author">Author:</label>
+                    <input required type="text" id="Author" name="Author" placeholder="Author here">
+                </li>
+                <li>
+                    <label for="Publisher">Publisher name:</label>
+                    <input required type="text" id="Publisher" name="Publisher" placeholder="Publisher">
+                </li>
+                <li>
+                    <label for="NumberOfPages">NumberOfPages:</label>
+                    <input required type="number" id="NumberOfPages" name="NumberOfPages" placeholder="Number Of Pages">
+                </li>
+                <li>
+                    <label for="EditionNumber">Edition Number:</label>
+                    <input type="number" id="EditionNumber" name="EditionNumber" placeholder="Edition Number">
+                </li>
+                <li>
+                    <label for="Availability">Availability:</label>
+                    <select required name="Availability" id="Availability">
+                        <option value="Paperback" selected>Paperback</option>
+                        <option value="eBook">eBook</option>
+                        <option value="Audiobook">Audiobook</option>
+                    </select>
+                </li>
+                <li>
 
-            <label for="Author">Author:</label>
-            <input type="text" id="Author" name="Author" placeholder="Author here"><br>
-
-            <label for="Publisher">Publisher name:</label>
-            <input type="text" id="Publisher" name="Publisher" placeholder="Publisher"><br>
-
-            <label for="NumberOfPages">NumberOfPages:</label>
-            <input type="number" id="NumberOfPages" name="NumberOfPages" placeholder="Number Of Pages"><br>
-            
-            <label for="EditionNumber">Edition Number:</label>
-            <input type="number" id="EditionNumber" name="EditionNumber" placeholder="Edition Number"><br>
-            
-            <label for="Availability">Availability:</label>
-            <select name="Availability">
-                <option value="Paperback">Paperback</option>
-                <option value="eBook">eBook</option>
-                <option value="Audiobook">Audiobook</option>
-            </select> <br/>
-
-            <label for="PublicationDate">Publication Date:</label>
-            <input type="date" id="PublicationDate" name="PublicationDate" placeholder="Publication Date"><br><br>
-            <input type="submit" value="Submit">
-          </form> 
+                    <label for="PublicationDate">Publication Date:</label>
+                    <input type="date" id="PublicationDate" name="PublicationDate" placeholder="Publication Date">
+                </li>
+                <li>
+                    <input id="bookForm_submit" type="submit" value="Add">
+                </li>
+            </ul>
+        </form>
     </div>
+    <script src="./script/route.js"></script>
+    <script src="./script/Book.js"></script>
+    <script src="./script/script.js"></script>
+
+
 
 </body>
 
