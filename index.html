@@ -3,6 +3,7 @@
 
 <head>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -10,36 +11,37 @@
         <ul>
             <li><a href="javascript:void(0)" id="bookList">List Of Books</a></li>
             <li><a href="javascript:void(0)" id="addBook">Add Book</a></li>
+            <li><a href="javascript:void(0)" id="favorites">Favorites</a></li>
+            <div class="search-container">
+                    <input id="search_input" type="text" placeholder="ISBN Number..." name="search">
+                    <button id="search_button"><i class="fa fa-search"></i></button>
+            </div>
         </ul>
     </div>
 
-
-    <!-- <div class="bookList">
-
-    </div> -->
-
-    <table  class="bookList">
+    <table class="bookList">
         <thead class="bookList">
             <tr>
-              <th>ISBN</th>
-              <th>Title</th>
-              <th>Author</th>
-              <th>Publication</th>
-              <th>Published Date</th>
-              <th>Available in</th>
-              <th>Number Of Pages</th>
-              <th>EditionNumber</th>
-              <th>Favorite</th>
-              <th>Action</th>
+                <th>ISBN</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Publication</th>
+                <th>Published Date</th>
+                <th>Available in</th>
+                <th>Number Of Pages</th>
+                <th>EditionNumber</th>
+                <th>Favorite</th>
+                <th>Action</th>
             </tr>
         </thead>
-        <tbody  class="bookList_Content">
+        <tbody class="bookList_Content">
 
         </tbody>
-      </table>
+    </table>
 
     <div class="addBook hide">
         <form id="bookForm">
+            <span id="error"></span>
             <ul>
                 <li>
                     <label for="Title">Title:</label>
@@ -76,14 +78,84 @@
                 <li>
 
                     <label for="PublicationDate">Publication Date:</label>
-                    <input type="month" id="PublicationDate" name="PublicationDate" placeholder="Publication Date">
+                    <input type="date" id="PublicationDate" name="PublicationDate" placeholder="Publication Date">
                 </li>
                 <li>
-                    <input id="bookForm_submit" type="submit" value="Add">
+                    <button id="bookForm_submit" type="submit">Add Book</button>
                 </li>
             </ul>
         </form>
     </div>
+
+    <table class="favorites hide">
+        <thead class="favorites">
+            <tr>
+                <th>ISBN</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Publication</th>
+                <th>Published Date</th>
+                <th>Available in</th>
+                <th>Number Of Pages</th>
+                <th>EditionNumber</th>
+                <th>Favorite</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody class="favorites_Content">
+
+        </tbody>
+    </table>
+
+    <div class="editBook hide">
+        <form id="bookForm_edit">
+            <span id="error"></span>
+            <ul>
+                <li>
+                    <label for="Title">Title:</label>
+                    <input required type="text" id="Title_Edit" value="">
+                </li>
+                <li>
+                    <label for="ISBN">ISBN:</label>
+                    <input required type="number" id="ISBN_Edit" value="">
+                </li>
+                <li>
+                    <label for="Author">Author:</label>
+                    <input required type="text" id="Author_Edit" value="">
+                </li>
+                <li>
+                    <label for="Publisher">Publisher name:</label>
+                    <input required type="text" id="Publisher_Edit" value="">
+                </li>
+                <li>
+                    <label for="NumberOfPages">NumberOfPages:</label>
+                    <input required type="number" id="NumberOfPages_Edit" value="">
+                </li>
+                <li>
+                    <label for="EditionNumber">Edition Number:</label>
+                    <input type="number" id="EditionNumber_Edit" value="">
+                </li>
+                <li>
+                    <label for="Availability">Availability:</label>
+                    <select required id="Availability_Edit">
+                        <option value="Paperback" selected>Paperback</option>
+                        <option value="eBook">eBook</option>
+                        <option value="Audiobook">Audiobook</option>
+                    </select>
+                </li>
+                <li>
+
+                    <label for="PublicationDate">Publication Date:</label>
+                    <input required type="date" id="PublicationDate_Edit" value="">
+                </li>
+                <li>
+                    <button id="bookForm_Edit_submit" type="submit">Edit Book</button>
+                </li>
+            </ul>
+        </form>
+    </div>
+
+    
     <script src="./script/route.js"></script>
     <script src="./script/Book.js"></script>
     <script src="./script/script.js"></script>

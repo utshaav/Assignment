@@ -1,6 +1,7 @@
 {
     "compilerOptions": {
-        "target": "es5",
+        "lib": ["ES2017", "DOM"],
+        "target": "ES5",
         "module": "umd",
         "outDir": "script"
     }
