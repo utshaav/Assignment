@@ -45,9 +45,21 @@ var BookDetail = /** @class */ (function () {
         console.log(this._bookList);
         var divContent = '';
         this._bookList.forEach(function (element) {
-            divContent += "<div class=\"card\">\n                            <div class=\"container\">\n                            <h4><b>".concat(element.Title, "</b></h4>\n                            <p>ISBN: ").concat(element.ISBN, "</p>\n                            <p>Author: ").concat(element.Author, "</p>\n                            <p>Avaliable: ").concat(element.Availability, "</p>\n                            <p>No of pages: ").concat(element.NumberOfPages, "</p>\n                            <p>Publisher: ").concat(element.Publisher, "</p>\n                            <p>Published Year: ").concat(element.PublicationDate, "</p>\n                            <p>Edition Number: ").concat(element.EditionNumber, "</p>\n                            </div>\n                            </div>");
+            // divContent += `<div class="card">
+            //                 <div class="container">
+            //                 <h4><b>${element.Title}</b></h4>
+            //                 <p>ISBN: ${element.ISBN}</p>
+            //                 <p>Author: ${element.Author}</p>
+            //                 <p>Avaliable: ${element.Availability}</p>
+            //                 <p>No of pages: ${element.NumberOfPages}</p>
+            //                 <p>Publisher: ${element.Publisher}</p>
+            //                 <p>Published Year: ${element.PublicationDate}</p>
+            //                 <p>Edition Number: ${element.EditionNumber}</p>
+            //                 </div>
+            //                 </div>`
+            divContent += "<tr>\n                            <td>".concat(element.ISBN, "</td>\n                            <td>").concat(element.Title, "</td>\n                            <td>").concat(element.Author, "</td>\n                            <td>").concat(element.Publisher, "</td>\n                            <td>").concat(element.PublicationDate, "</td>\n                            <td>").concat(element.Availability, "</td>\n                            <td>").concat(element.NumberOfPages, "</td>\n                            <td>").concat(element.EditionNumber, "</td>\n                            <td><input type=\"checkbox\" class='favorite' value=\"").concat(element.ISBN, "\"></td>\n                            </tr>");
         });
-        bookList_div.innerHTML = divContent;
+        bookList_content.innerHTML = divContent;
     };
     return BookDetail;
 }());

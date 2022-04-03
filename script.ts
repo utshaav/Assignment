@@ -60,20 +60,31 @@ class BookDetail {
         console.log(this._bookList)
         let divContent : string = '';
         this._bookList.forEach(element => {
-            divContent += `<div class="card">
-                            <div class="container">
-                            <h4><b>${element.Title}</b></h4>
-                            <p>ISBN: ${element.ISBN}</p>
-                            <p>Author: ${element.Author}</p>
-                            <p>Avaliable: ${element.Availability}</p>
-                            <p>No of pages: ${element.NumberOfPages}</p>
-                            <p>Publisher: ${element.Publisher}</p>
-                            <p>Published Year: ${element.PublicationDate}</p>
-                            <p>Edition Number: ${element.EditionNumber}</p>
-                            </div>
-                            </div>`
+            // divContent += `<div class="card">
+            //                 <div class="container">
+            //                 <h4><b>${element.Title}</b></h4>
+            //                 <p>ISBN: ${element.ISBN}</p>
+            //                 <p>Author: ${element.Author}</p>
+            //                 <p>Avaliable: ${element.Availability}</p>
+            //                 <p>No of pages: ${element.NumberOfPages}</p>
+            //                 <p>Publisher: ${element.Publisher}</p>
+            //                 <p>Published Year: ${element.PublicationDate}</p>
+            //                 <p>Edition Number: ${element.EditionNumber}</p>
+            //                 </div>
+            //                 </div>`
+            divContent +=   `<tr>
+                            <td>${element.ISBN}</td>
+                            <td>${element.Title}</td>
+                            <td>${element.Author}</td>
+                            <td>${element.Publisher}</td>
+                            <td>${element.PublicationDate}</td>
+                            <td>${element.Availability}</td>
+                            <td>${element.NumberOfPages}</td>
+                            <td>${element.EditionNumber}</td>
+                            <td><input type="checkbox" class='favorite' value="${element.ISBN}"></td>
+                            </tr>`
         });
-        bookList_div.innerHTML = divContent;
+        bookList_content.innerHTML = divContent;
     }
 }
 

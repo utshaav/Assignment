@@ -14,9 +14,29 @@
     </div>
 
 
-    <div class="bookList">
+    <!-- <div class="bookList">
 
-    </div>
+    </div> -->
+
+    <table  class="bookList">
+        <thead class="bookList">
+            <tr>
+              <th>ISBN</th>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Publication</th>
+              <th>Published Date</th>
+              <th>Available in</th>
+              <th>Number Of Pages</th>
+              <th>EditionNumber</th>
+              <th>Favorite</th>
+              <th>Action</th>
+            </tr>
+        </thead>
+        <tbody  class="bookList_Content">
+
+        </tbody>
+      </table>
 
     <div class="addBook hide">
         <form id="bookForm">
@@ -56,7 +76,7 @@
                 <li>
 
                     <label for="PublicationDate">Publication Date:</label>
-                    <input type="date" id="PublicationDate" name="PublicationDate" placeholder="Publication Date">
+                    <input type="month" id="PublicationDate" name="PublicationDate" placeholder="Publication Date">
                 </li>
                 <li>
                     <input id="bookForm_submit" type="submit" value="Add">

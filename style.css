@@ -1,3 +1,8 @@
+/* Styling for navbar */
+#navBar {
+    margin-bottom:10px;
+}
+
 #navBar ul {
     list-style-type: none;
     margin: 0;
@@ -22,26 +27,14 @@
     background-color: #111;
 }
 
+
+/* To hide certain elements */
+
 .hide {
     display: none;
 }
 
-.card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    width: 40%;
-    display: inline-block;
-    /* transition: 0.3s; */
-    margin: 15px;
-}
-
-.card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
-
-.container {
-    padding: 2px 16px;
-}
-
+/* Styling for form */
 form ul {
     list-style: none;
     padding: 0;
@@ -61,4 +54,18 @@ label {
     display: inline-block;
     width: 190px;
     text-align: left;
-  }
+}
+
+/* Styling for table */
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
