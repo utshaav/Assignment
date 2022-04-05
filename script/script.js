@@ -1,5 +1,5 @@
 var bookDetail = new BookDetail();
-// Form Handeling
+// Form Handeling, to add book to the list
 function submitHandler(event) {
     var book = {
         Author: getString('Author'),
@@ -13,16 +13,19 @@ function submitHandler(event) {
     };
     bookDetail.addToBooklist(book);
     bookDetail.displayBookList();
-    event.preventDefault();
+    event.preventDefault(); // prevent reload 
     return false; // prevent reload
 }
 ;
+//Gets input value
 function getString(name) {
     return document.getElementById(name).value;
 }
+//Gets input value from dropdon
 function getStringFromDropDown(name) {
     return document.getElementById(name).value;
 }
+//Gets input value as number
 function getNumber(name) {
     var val = document.getElementById(name).value;
     var num;
@@ -34,6 +37,7 @@ function getNumber(name) {
     }
     return num;
 }
+//Sets the value for input, used for edit
 function setValue(name, value) {
     document.getElementById(name).value = value;
 }
@@ -79,8 +83,8 @@ function submitEditHandler(event) {
     };
     bookDetail.EditBook(book);
     bookDetail.displayBookList();
-    event.preventDefault();
-    goToBookList();
+    event.preventDefault(); // prevent reload 
+    goToBookList(); //Navigate to book list
     return false; // prevent reload
 }
 ;

@@ -1,3 +1,4 @@
+//This is to define type for book
 interface Book {
     ISBN: number;
     Title: string;
@@ -9,6 +10,7 @@ interface Book {
     EditionNumber?: number;
 }
 
+//A sample book
 let book: Book = {
     Author: "Dale Carnegie",
     Availability: "Paperback",
@@ -20,14 +22,18 @@ let book: Book = {
     EditionNumber: 1
 }
 
+// All the function related to book is defined in this class
 class BookDetail {
     constructor() {
+        //Add the default book
         this._bookList.push(book);
+        //Added default book to the favorite list
         this._favoriteList.push(book.ISBN);
         this.displayBookList();
         this.displayFavoriteBookList();
     }
 
+    //Property to store favorite books
     private _favoriteList: number[] = [];
     public get favoriteList(): number[] {
         return this._favoriteList;
@@ -36,6 +42,7 @@ class BookDetail {
         this._favoriteList = v;
     }
 
+    //Property to store books
     private _bookList: Book[] = [];
     public get bookList(): Book[] {
         return this._bookList;
@@ -47,7 +54,7 @@ class BookDetail {
     // let bookList: Book[] = [];
 
 
-
+    //Adds to the list of book
     public addToBooklist(book: Book) {
         let flag: boolean = false;
         this._bookList.forEach(element => {
@@ -66,10 +73,12 @@ class BookDetail {
         }
     }
 
+    //Returns the list of books
     public getBooklist() {
         return this._bookList
     }
 
+    //This function create a table for the books in the booklist and displays it in the html page
     public displayBookList() {
         console.log(this._bookList)
         let divContent: string = '';
@@ -85,6 +94,7 @@ class BookDetail {
         bookList_content.innerHTML = divContent;
     }
 
+    //This function create a table for the books in the favorite and displays it in the favorite tab
     public displayFavoriteBookList() {
         console.log(this._bookList)
         let divContent: string = '';
@@ -99,6 +109,8 @@ class BookDetail {
         favorites_content.innerHTML = divContent;
     }
 
+    //This function will add the book to favoritelist if it is not in the list,
+    //And remove the book from favorite list if the book is already in favorite list
     public toggleFavorites(isbn: number) {
         if (this._favoriteList.includes(isbn)) {
             this._favoriteList = this._favoriteList.filter(item => item !== isbn);
@@ -110,6 +122,7 @@ class BookDetail {
         this.displayFavoriteBookList();
     }
 
+    //This method will search book by isbn number and display it in the table
     public search(isbn: number) {
         if (isbn === 0) {
             this.displayBookList();
@@ -130,6 +143,7 @@ class BookDetail {
 
     }
 
+    //This method will delete the book
     public RemoveBook(isbn: number) {
         this._bookList.forEach(element => {
             if (element.ISBN === isbn) {
@@ -140,6 +154,7 @@ class BookDetail {
         });
     }
 
+    //This method will edit the book
    public EditBook(book: Book) {
     this._bookList.forEach(element => {
         debugger
@@ -157,6 +172,7 @@ class BookDetail {
     });
    }
 
+   //This metgod will return a book by isbn number
    public GetBook(isbn: number){
        this._bookList.forEach(e => {
            if (e.ISBN === isbn) {
@@ -166,6 +182,8 @@ class BookDetail {
        return book;
    }
 
+   //This method will create a table row for a book
+   //deletebook(isbn), editbook(isbn) and toggleFavorites(isbn) are called on on click of respective elements and icons
     private getTableRow(element: Book, checked: string): string {
         return `<tr>
                 <td>${element.ISBN}</td>
